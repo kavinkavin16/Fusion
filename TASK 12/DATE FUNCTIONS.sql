@@ -30,4 +30,9 @@ ALTER SESSION SET TIME_ZONE = '-8:0';
 
 --CURRENT_DATE returns the current date in the session time zone, in a value in the Gregorian calendar of data type DATE.
 
--->
+-->CURRENT_TIMESTAMP()
+CREATE TABLE current_test (col1 TIMESTAMP WITH TIME ZONE);
+
+INSERT INTO current_test VALUES
+  (TO_TIMESTAMP_TZ(CURRENT_TIMESTAMP, 'DD-MON-RR HH.MI.SSXFF PM TZH:TZM'));
+
